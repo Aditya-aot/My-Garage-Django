@@ -14,6 +14,14 @@ from pathlib import Path
 
 import os
 
+# Heroku
+import django_heroku
+import dj_database_url
+from decouple import config
+
+
+
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
@@ -52,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'mygarage.urls'
@@ -133,4 +143,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
+
+
+# Heroku
+STATICFILES_STORAGE = 'whitenoise.storange.CompressedManifestStorage'
+django_heroku.settings(locals())
+# Heroku
 
