@@ -1,0 +1,33 @@
+{% extends 'garage/base.html'%}
+{% block content %}
+
+
+
+
+
+
+{% for v in vehi %}
+    
+    {{v.name}}
+
+        <form action="#" method='post' >{% csrf_token %}
+        <button type="submit" class="btn btn-success">Select</button>
+<br>
+
+  
+    {% endfor %}
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+

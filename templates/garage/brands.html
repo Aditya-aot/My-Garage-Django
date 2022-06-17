@@ -1,0 +1,66 @@
+{% extends 'garage/base.html'%}
+{% block content %}
+
+<br><br><br><br><br><br>
+
+<div class="row">
+
+<!-- <div class="card" style="width: 18rem;">
+    <img src="https://bd.gaadicdn.com/processedimages/oben/oben-electric-bike/640X309/oben-electric-bike62306eca07dd7.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div> -->
+<!-- 
+  <div class="card" style="width: 18rem;">
+    <img src="https://bd.gaadicdn.com/processedimages/oben/oben-electric-bike/640X309/oben-electric-bike62306eca07dd7.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+
+  <div class="card" style="width: 18rem;">
+    <img src="https://bd.gaadicdn.com/processedimages/oben/oben-electric-bike/640X309/oben-electric-bike62306eca07dd7.jpg" class="card-img-top" alt="...">
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+{% for b in brand %}
+    <!-- {{b.title}}
+    {{b.image}} -->
+    
+    <div class="card" style="width: 18rem;">
+      <img src="{{b.image}}" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-text">{{b.title}}</p>
+
+        <form action="/vehicle/{{b.id}}" method='post' >{% csrf_token %}
+        <button type="submit" class="btn btn-success">Select</button>
+  
+      </form>
+    
+      </div>
+    </div>
+
+
+  
+    {% endfor %}
+  
+  
+  
+
+    <br><br><br><br><br><br>
+
+
+
+
+
+
+
+
+{% endblock content %}
