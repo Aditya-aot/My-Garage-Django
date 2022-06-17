@@ -1,1 +1,1 @@
-web : gunicorn mygarage.wsgi
+web: gunicorn mygarage.wsgi
