@@ -10,7 +10,7 @@
     
     {{v.name}}
 
-        <form action="#" method='post' >{% csrf_token %}
+        <form action="/add/{{v.id}}" method='post' >{% csrf_token %}
         <button type="submit" class="btn btn-success">Select</button>
 <br>
 

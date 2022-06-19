@@ -12,6 +12,23 @@
 
 
 
+    <div class="container">
+
+    {% for o in obj %}
+        {{o.user.username}}
+        {{o.vehicle.name}}
+        <br>
+        <hr>        
+ 
+
+    
+    {% endfor %}
+
+
+</div>  
+
+
+
 {% endblock content %}
 
 

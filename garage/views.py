@@ -1,7 +1,7 @@
 
-from django.shortcuts import render
+from django.shortcuts import render ,redirect
 
-from .models import brands ,vehicle
+from .models import add_vehicle, brands ,vehicle
 
 
 # Create your views here.
@@ -15,7 +15,11 @@ def welcome(request) :
 
 def home(request) :
 
-    context = {}
+    obj = add_vehicle.objects.all()
+
+    context = {
+        'obj':obj
+        }
     return render(request, 'garage/home.html',context)
 
 
@@ -37,6 +41,22 @@ def vehicle_view(request,pk) :
     return render(request, 'garage/vehicle.html',context)
 
 
+def add(request , pk) :
+    obj2 = add_vehicle.objects.all()
+
+
+    if request.method == "POST" :
+        obj = add_vehicle()
+        # obj.user = request.user or None
+        # obj.save()
+        aa = add_vehicle( user=request.user, vehicle_id = pk)
+        aa.save()
+
+
+
+    context = {}
+    # return render(request, 'garage/add.html',context)
+    return redirect("/home" , context)
 
 
 
