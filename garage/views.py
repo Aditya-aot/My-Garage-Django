@@ -60,3 +60,11 @@ def add(request , pk) :
 
 
 
+def my_vehicle_view(request) :
+    obj = add_vehicle.objects.all()
+
+    context = {
+        'obj':obj
+        }
+    return render(request, 'garage/myvehicle.html',context)
+
