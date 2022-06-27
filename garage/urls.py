@@ -11,4 +11,7 @@ urlpatterns = [
     path('myvehicle', views.my_vehicle_view , name='my_vehicle_view') ,
     
 
+    path('test', views.test , name='test') ,
+    path('test2', views.test2 , name='test2') ,
+
 ]

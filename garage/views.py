@@ -68,3 +68,10 @@ def my_vehicle_view(request) :
         }
     return render(request, 'garage/myvehicle.html',context)
 
+
+def test(request) :
+    return render(request, 'test/index.html')
+
+def test2(request) :
+    return render(request, 'test/index2.html')
+

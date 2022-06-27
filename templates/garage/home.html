@@ -5,6 +5,8 @@
 
 
 <br>
+<br>
+<br>
 
     <div class="container">
 
@@ -12,7 +14,7 @@
         {{o.user.username}}
         {{o.vehicle.name}}
         
-        <form action="/services/{{o.id}}" method='post' >{% csrf_token %}
+        <form action="booking/services/{{o.id}}" method='post' >{% csrf_token %}
             <button type="submit" class="btn btn-success">Get Services</button>
       
           </form>

@@ -1,0 +1,37 @@
+{% extends 'garage/base.html'%}
+{% block content %}
+
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+<div class="container">
+
+
+{% for o in obj %}
+      {{o.vehicle}} <br>
+                {{o.title}} <br>
+                {{o.summary}} <br>
+                {{o.price}} <br>
+                {{o.discription}} <br>
+  
+  
+    {% endfor %}
+  
+
+
+</div>  
+
+
+
+
+
+
+
+
+{% endblock content %}
+
