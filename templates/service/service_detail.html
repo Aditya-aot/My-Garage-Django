@@ -18,8 +18,12 @@
                 {{o.summary}} <br>
                 {{o.price}} <br>
                 {{o.discription}} <br>
+                <form action="/service/confirm/{{user_vehicle}}/{{service}}/{{o.id}}" method='post' >{% csrf_token %}
+                    <button type="submit" class="btn btn-success">Get Services</button>
+              
+                  </form>
   
-  
+
     {% endfor %}
   
 

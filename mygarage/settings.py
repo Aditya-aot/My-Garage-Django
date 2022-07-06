@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'garage' ,
     'accounts',
     'booking' ,
+    'service' ,
 ]
 
 MIDDLEWARE = [

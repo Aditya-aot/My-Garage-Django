@@ -36,7 +36,7 @@ def brand(request) :
 def vehicle_view(request,pk) :
     vehicle_name = vehicle.objects.all()
     brand_vehicle = vehicle_name.filter(brand_id=pk)
-    print('-------------------->>>>>>>>>>>>>>>>',brand_vehicle)
+    # print('-------------------->>>>>>>>>>>>>>>>',brand_vehicle)
     context = {'vehi':brand_vehicle}
     return render(request, 'garage/vehicle.html',context)
 
@@ -61,7 +61,8 @@ def add(request , pk) :
 
 
 def my_vehicle_view(request) :
-    obj = add_vehicle.objects.all()
+    obj1 = add_vehicle.objects.all()
+    obj = obj1.filter(user=request.user)
 
     context = {
         'obj':obj

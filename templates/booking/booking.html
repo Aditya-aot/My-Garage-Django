@@ -1,0 +1,35 @@
+{% extends 'garage/base.html'%}
+{% block content %}
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    <div class="container">
+
+    {% for b in user_booking %}
+    {{b.vehicle}} <br>
+    {{b.service}} <br>
+    {{b.package}} <br>
+    ₹{{b.price_model}} <br>
+    {{b.number}} <br>
+    {{b.address}} <br>
+    {{b.date}} <br>
+       
+    <hr>
+        {% endfor %}
+
+</div>  
+
+
+
+
+
+
+{% endblock content %}
+

@@ -1,0 +1,74 @@
+{% extends 'garage/base.html'%}
+{% block content %}
+
+
+
+
+<br>
+
+
+<div class="container">
+
+
+{% for p in price %}
+
+<form action="/booking/cart/{{user_vehicle}}/{{pk}}/{{package}}/{{p.id}}" method='post' >{% csrf_token %}
+   
+<h4>pk :{{pk}}</h4>
+₹{{p.price}}  <br>
+        {{p.vehicle}} <br>
+            {% if pk == "regular" %}
+                {{p.regular}} <br>
+                {{p.regular.Summary}}
+               
+
+            {% elif pk == "running_repair" %}
+                {{p.running_repair}} <br>
+                {{p.running_repair.Summary}}
+
+            {% elif pk == "washing_and_cleaning" %}
+                {{p.washing_and_cleaning}} <br>
+                {{p.washing_and_cleaning.Summary}}
+                
+
+            {% elif pk == "brakes" %}
+                {{p.brakes}} <br>
+                {{p.brakes.Summary}}
+
+            {% elif pk == "cable_replacement" %}
+                {{p.cable_replacement}} <br>
+                {{p.cable_replacement.Summary}}
+            
+            {% elif pk == "battery" %}
+                {{p.battery}} <br>
+                {{p.battery.Summary}}
+
+            {% elif pk == "tyres" %}
+                {{p.tyres}} <br>
+                {{p.tyres.Summary}}
+
+                {% endif %}
+                
+                    <button type="submit" class="btn btn-success">Add to Cart</button>
+              
+                  </form>
+
+<br>
+
+
+
+
+    {% endfor %}
+  
+
+
+
+
+
+</div>  
+
+
+
+
+{% endblock content %}
+

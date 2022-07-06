@@ -14,17 +14,13 @@
         {{o.user.username}}
         {{o.vehicle.name}}
         
-        <form action="booking/services/{{o.id}}" method='post' >{% csrf_token %}
+        <form action="service/services/{{o.vehicle.id}}" method='post' >{% csrf_token %}
             <button type="submit" class="btn btn-success">Get Services</button>
       
           </form>
         <br>
         <hr>        
- 
-
-    
-    {% endfor %}
-
+        {% endfor %}
 
 </div>  
 

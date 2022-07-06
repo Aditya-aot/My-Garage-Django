@@ -1,0 +1,55 @@
+{% extends 'garage/base.html'%}
+{% block content %}
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<div class="container">
+
+
+    <!-- {% for l in list %}
+
+<form action="/service/{{l}}" method='post' >{% csrf_token %}
+    <button type="submit" class="btn btn-success">{{l}}</button>
+    
+
+  </form>
+  <br>
+  
+  
+    {% endfor %} -->
+
+    
+  
+
+    {% for l, o in obj %}
+
+    <form action="/service/{{l}}/{{o}}" method='post' >{% csrf_token %}
+      <button type="submit" class="btn btn-success">{{l}}</button>
+    </form>
+
+    <br>
+    {% endfor %}
+
+</div>  
+
+
+
+
+
+
+
+
+{% endblock content %}
+
+
+
