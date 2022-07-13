@@ -10,6 +10,7 @@ from .models import cart ,booking
 class cart_name(admin.ModelAdmin) :
     list_display = ['__str__' ,'vehicle','service','package']
     list_filter =['vehicle','service','package']
+
     class Meta :
         model =cart
 

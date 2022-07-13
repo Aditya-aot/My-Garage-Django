@@ -35,11 +35,13 @@
     {{b.image}} -->
     
     <div class="card" style="width: 18rem;">
-      <img src="{{b.image}}" class="card-img-top" alt="...">
+      {% if b.image %}
+      <img src="{{b.image.url}}" class="card-img-top" alt="...">
+      {% endif %}
       <div class="card-body">
         <p class="card-text">{{b.title}}</p>
 
-        <form action="/vehicle/{{b.id}}" method='post' >{% csrf_token %}
+        <form action="/vehicle/{{b.id}}" method='post' enctype="multipart/form-data" >{% csrf_token %}
         <button type="submit" class="btn btn-success">Select</button>
   
       </form>

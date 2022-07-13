@@ -20,6 +20,7 @@ class regular_name(admin.ModelAdmin) :
 class price_name(admin.ModelAdmin) :
     list_display = ['__str__' ,'price','vehicle','regular','running_repair','washing_and_cleaning','brakes','cable_replacement','battery','tyres']
     list_filter =['regular','running_repair','washing_and_cleaning','brakes','cable_replacement','battery','tyres','vehicle']
+    # fields = ('price','vehicle','regular','running_repair','washing_and_cleaning','brakes','cable_replacement','battery','tyres')
     class Meta :
         model =price_model
 

@@ -3,19 +3,58 @@
 
 
 
+<br>
+<br>
+<br>
+<br>
 
+<style>
+.parent {
+  display: flex;
+  flex-wrap: wrap;
+}
 
+.child {
+  flex: 1 0 21%; /* explanation below */
+  margin: 5px;
 
+}
+
+</style>
+
+<div class="parent">
 {% for v in vehi %}
-    
+
+<div class="card child" style="width: 18rem;">
+    {% if v.image %}
+    <img src="{{v.image.url}}" class="card-img-top" alt="...">
+    {% endif %}
+    <div class="card-body">
+      <p class="card-text"> {{v.name}}</p>
+
+      <form action="/add/{{v.id}}" method='post' enctype="multipart/form-data" >{% csrf_token %}
+      <button type="submit" class="btn btn-success">Select</button>
+
+    </form>
+  
+    </div>
+  </div>
+
+<!-- 
+    {% if v.image %}
+    <img src="{{v.image.url}}" alt="...">
+    {% endif %}
     {{v.name}}
+
 
         <form action="/add/{{v.id}}" method='post' >{% csrf_token %}
         <button type="submit" class="btn btn-success">Select</button>
-<br>
+<br> -->
 
   
     {% endfor %}
+
+    </div>
 
 
 

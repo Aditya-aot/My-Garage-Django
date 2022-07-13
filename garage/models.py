@@ -18,7 +18,7 @@ class brands(models.Model):
 class vehicle(models.Model):
     brand = models.ForeignKey(brands, on_delete=models.CASCADE, null = True)
     name = models.CharField(max_length=255)  
-    image = models.ImageField(upload_to='uploads/', blank=True, null=True)
+    image = models.ImageField(upload_to='vehicle_image/', blank=True, null=True)
     
     def __str__(self) :
         return self.name
@@ -28,3 +28,4 @@ class add_vehicle(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, null = True)
     # image = models.ImageField(upload_to='uploads/', blank=True, null=True)
     
+ 
